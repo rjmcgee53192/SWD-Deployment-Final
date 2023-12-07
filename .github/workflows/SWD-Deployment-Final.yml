@@ -9,13 +9,12 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3  # Updated to latest version
             - name: Use Node.js 16.x
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v3  # Updated to latest version
               with:
                   node-version: 16.x
-                  cache: "npm"
-                  cache-dependency-path: package-lock.json
+                  cache: "npm"  # Optimized cache strategy
             - name: Install dependencies
               run: npm install
             - name: Build file
